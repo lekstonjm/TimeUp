@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.lekston.timeup.MainActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:id="@+id/sequenceEdit"
+        android:layout_alignParentEnd="true"
+        android:hint="Exemple : 120,30"
+        android:layout_toEndOf="@+id/startButton" />
+
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chronometer"
+        android:textSize="60sp"
+        android:format="%s"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:id="@+id/startButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:onClick="handleStartClick"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp" />
+
+    <Button
+        android:text="Stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stopButton"
+        style="@style/Widget.AppCompat.Button"
+        android:onClick="handleStopClick"
+        android:layout_marginEnd="23dp"
+        android:layout_alignBaseline="@+id/startButton"
+        android:layout_alignBottom="@+id/startButton"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Sequence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sequenceLabel"
+        android:textAlignment="center"
+        android:layout_alignBaseline="@+id/sequenceEdit"
+        android:layout_alignBottom="@+id/sequenceEdit"
+        android:layout_toStartOf="@+id/sequenceEdit"
+        android:layout_marginEnd="12dp"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="Iteration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iterationLabel"
+        android:textSize="18sp"
+        android:layout_alignBaseline="@+id/iterationEdit"
+        android:layout_alignBottom="@+id/iterationEdit"
+        android:layout_alignStart="@+id/sequenceLabel" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text|number"
+        android:ems="10"
+        android:id="@+id/iterationEdit"
+        android:hint="Exemple : 10"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/sequenceEdit"
+        android:layout_alignStart="@+id/sequenceEdit"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Fini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/finishLabel"
+        android:layout_alignBaseline="@+id/startButton"
+        android:layout_alignBottom="@+id/startButton"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:visibility="invisible" />
+
+</RelativeLayout>
